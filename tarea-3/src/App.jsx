@@ -17,7 +17,11 @@ function App() {
       const newContacts = contacts.filter((_,index) => index !==indexContact);
       setContacts(newContacts)
   }
+  const [filter, setFilter] = useState("");
   
+  const filteredContacts = filter === ""
+    ? contacts
+    : contacts.filter((c) => c.label === filter);
   return (
     <div>
       <div className="bg-blue-800 flex font-inter rounded-b-3xl justify-center">
@@ -27,7 +31,15 @@ function App() {
       </div>
 
       <Form onAdd={addContact} />
-      <List contacts={contacts} onDelete={deleteContact}/>
+      <div className="flex justify-center my-4">
+        <select onChange={(e) => setFilter(e.target.value)} className="bg-blue-800 text-white p-4 rounded-3xl font-bold">
+          <option value="">Todos</option>
+          <option value="Amigo">Amigo</option>
+          <option value="Familia">Familia</option>
+          <option value="Trabajo">Trabajo</option>
+        </select>
+      </div>
+      <List contacts={filteredContacts} onDelete={deleteContact} />
     </div>
   );
 }

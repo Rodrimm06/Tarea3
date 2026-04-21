@@ -44,7 +44,7 @@ function Form({ onAdd }) {
         value={label}
         onChange={(e) => setLabel(e.target.value)}
       >
-        <option value="" className="text-black">Selecciona una categoría</option>
+        <option value="" className="text-black">Categoría</option>
         <option value="Amigo" className="text-black">Amigo</option>
         <option value="Familia" className="text-black">Familia</option>
         <option value="Trabajo" className="text-black">Trabajo</option>
