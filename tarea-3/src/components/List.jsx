@@ -11,6 +11,7 @@ function List({ contacts }) {
           label={con.label}
           number={con.number}
         />
+        
       ))}
 
       
