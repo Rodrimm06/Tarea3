@@ -38,14 +38,16 @@ function Form({ onAdd }) {
       />
 
       <select
-        className="border p-2 rounded bg-gray-200"
+        className={`border p-2 rounded bg-gray-200 ${
+          label === "" ? "text-gray-400" : "text-black"
+        }`}
         value={label}
         onChange={(e) => setLabel(e.target.value)}
       >
-        <option value="">Selecciona una categoría</option>
-        <option value="Amigo">Amigo</option>
-        <option value="Familia">Familia</option>
-        <option value="Trabajo">Trabajo</option>
+        <option value="" className="text-black">Selecciona una categoría</option>
+        <option value="Amigo" className="text-black">Amigo</option>
+        <option value="Familia" className="text-black">Familia</option>
+        <option value="Trabajo" className="text-black">Trabajo</option>
       </select>
 
       <button

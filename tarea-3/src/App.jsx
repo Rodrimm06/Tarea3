@@ -13,6 +13,11 @@ function App() {
     setContacts([...contacts, newContact]);
   };
 
+  const deleteContact =(indexContact) =>{
+      const newContacts = contacts.filter((_,index) => index !==indexContact);
+      setContacts(newContacts)
+  }
+  
   return (
     <div>
       <div className="bg-blue-800 flex font-inter rounded-b-3xl justify-center">
@@ -22,7 +27,7 @@ function App() {
       </div>
 
       <Form onAdd={addContact} />
-      <List contacts={contacts} />
+      <List contacts={contacts} onDelete={deleteContact}/>
     </div>
   );
 }
